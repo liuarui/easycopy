@@ -3,6 +3,7 @@
 Copy text based on clipboard.js 2.0.11
 
 ![version](https://img.shields.io/npm/v/easycopyjs)
+![size](https://img.shields.io/bundlephobia/min/easycopyjs)
 ![npmDownloadTotal](https://img.shields.io/npm/dt/easycopyjs)
 ![githubIssues](https://img.shields.io/github/issues/liuarui/easycopy)
 
