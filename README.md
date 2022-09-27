@@ -2,11 +2,13 @@
 
 Copy text based on clipboard.js 2.0.11
 
+![version](https://img.shields.io/npm/v/easycopyjs)
+![npmDownloadTotal](https://img.shields.io/npm/dt/easycopyjs)
+![githubIssues](https://img.shields.io/github/issues/liuarui/easycopy)
+
 ## Install
 
-`npm install --save easycopy clipboard`
-
-Usage
+`npm install --save easycopyjs`
 
 ## Usage
 
@@ -20,7 +22,7 @@ Usage
 </template>
 
 <script>
-import { copyText } from 'easycopy'
+import { copyText } from 'easycopyjs'
 export default {
     methods: {
         async doCopy() {
@@ -35,3 +37,7 @@ export default {
 }
 </script>
 ```
+
+# end
+
+If you feel helpful, you can come to Github give me a star, your ✨ is the biggest encouragement to me ~

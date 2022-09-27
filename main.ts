@@ -5,25 +5,33 @@ export type CopyTextOpt = {
     container?: HTMLElement
 }
 
+const getRandom = () => {
+    return Math.floor(Math.random() * 1000)
+}
+
 export const copyText = (text: string, opt?: CopyTextOpt): Promise<Event> => {
     return new Promise((resolve, reject) => {
         try {
             let triggerEl: null | HTMLElement = document.createElement('button')
-            triggerEl.id = 'easyCopyId'
+            const triggerRandomId = `easyCopyId${getRandom()}`
+            triggerEl.id = triggerRandomId
             triggerEl.style['opacity'] = '0'
 
-            let clipboard: null | ClipboardJS = new ClipboardJS('#easyCopyId', {
-                text: function () {
-                    return text
-                },
-                action: function () {
-                    return 'copy'
-                },
-                container:
-                    typeof opt?.container === 'object'
-                        ? opt.container
-                        : document.body,
-            })
+            let clipboard: null | ClipboardJS = new ClipboardJS(
+                `#${triggerRandomId}`,
+                {
+                    text: function () {
+                        return text
+                    },
+                    action: function () {
+                        return 'copy'
+                    },
+                    container:
+                        typeof opt?.container === 'object'
+                            ? opt.container
+                            : document.body,
+                }
+            )
 
             clipboard.on('success', function (e: Event) {
                 e.clearSelection()
